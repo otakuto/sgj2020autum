@@ -9,11 +9,11 @@ public class SimpleMove : MonoBehaviour
     {
 		if( Input.GetKey( KeyCode.UpArrow ) )
 		{
-			speed += Vector3.up * Time.deltaTime;
+			speed += Vector3.forward * Time.deltaTime;
 		}
 		if( Input.GetKey( KeyCode.DownArrow ) )
 		{
-			speed += Vector3.down * Time.deltaTime;
+			speed += Vector3.back * Time.deltaTime;
 		}
 		if( Input.GetKey( KeyCode.LeftArrow ) )
 		{
