@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,7 +24,7 @@ public class SimpleMove : MonoBehaviour
 			speed += Vector3.right * Time.deltaTime;
 		}
 
-		transform.Translate( speed );
+		gameObject.transform.Translate( speed );
 
 		speed *= 0.95f;
 	}
