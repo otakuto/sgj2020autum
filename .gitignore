@@ -1,0 +1,9 @@
+*.sln
+*.csproj
+*.ide-wal
+*.ide-shm
+*.ide
+*.lock
+*.suo
+DroneMask/Library/
+DroneMask/obj/
