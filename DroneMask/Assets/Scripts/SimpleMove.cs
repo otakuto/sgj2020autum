@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class SimpleMove : MonoBehaviour
 {
-    // Update is called once per frame
-    void Update()
+	void Start()
+	{
+		monobitView = GetComponent<MonobitEngine.MonobitView>();
+	}
+
+	void Update()
     {
+		if( !monobitView.isMine )
+		{
+			return;
+		}
 		if( Input.GetKey( KeyCode.UpArrow ) )
 		{
 			speed += Vector3.forward * Time.deltaTime;
@@ -31,4 +39,7 @@ public class SimpleMove : MonoBehaviour
 
 	[SerializeField]
 	Vector3 speed;
+
+	[SerializeField]
+	MonobitEngine.MonobitView monobitView;
 }
