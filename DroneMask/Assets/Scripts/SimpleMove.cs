@@ -7,27 +7,28 @@ public class SimpleMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		Vector3 translate = Vector3.zero;
-
 		if( Input.GetKey( KeyCode.UpArrow ) )
 		{
-			translate += Vector3.forward;
+			speed += Vector3.up * Time.deltaTime;
 		}
 		if( Input.GetKey( KeyCode.DownArrow ) )
 		{
-			translate += Vector3.back;
+			speed += Vector3.down * Time.deltaTime;
 		}
 		if( Input.GetKey( KeyCode.LeftArrow ) )
 		{
-			translate += Vector3.left;
+			speed += Vector3.left * Time.deltaTime;
 		}
 		if( Input.GetKey( KeyCode.RightArrow ) )
 		{
-			translate += Vector3.right;
+			speed += Vector3.right * Time.deltaTime;
 		}
-		transform.Translate( translate * speed );
-    }
+
+		transform.Translate( speed );
+
+		speed *= 0.95f;
+	}
 
 	[SerializeField]
-	float speed = 0.5f;
+	Vector3 speed;
 }
